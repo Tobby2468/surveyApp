@@ -34,8 +34,8 @@ app.post('/surveys/new', (req,res)=>{
 client.connect()
     .then(()=>{
         console.log(' connection successful');
-        const sql = 'INSERT INTO survs (rating, comment, name) VALUES ($1, $2, $3)'
-        const params = [req.body.rating, req.body.comment, req.body.name];
+        const sql = 'INSERT INTO survs (rating, comment, name, service, phonenumber) VALUES ($1, $2, $3, $4, $5)'
+        const params = [req.body.rating, req.body.comment, req.body.name, req.body.service, req.body.phonenumber];
         return client.query(sql,params);
     })
     .then((result)=>{

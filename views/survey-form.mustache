@@ -33,13 +33,13 @@
             padding: 30px 0;
               font-size: 15px;
         }
-        .signup-form h2 {
+        .signup-form h3 {
             color: #AA0000;
             margin: 0 0 15px;
             position: relative;
             text-align: center;
         }
-        .signup-form h2:before, .signup-form h2:after {
+        .signup-form h3:before, .signup-form h3:after {
             content: "";
             height: 2px;
             width: 30%;
@@ -48,10 +48,10 @@
             top: 50%;
             z-index: 2;
         }	
-        .signup-form h2:before {
+        .signup-form h3:before {
             left: 0;
         }
-        .signup-form h2:after {
+        .signup-form h3:after {
             right: 0;
         }
         .signup-form .hint-text {
@@ -68,7 +68,7 @@
             padding: 30px;
         }
         .signup-form .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .signup-form input[type="checkbox"] {
             margin-top: 3px;
@@ -105,24 +105,37 @@
     <body>
         <div class="signup-form">
     <form action="/surveys/new" method="post">
-		<h2>Rate us</h2>
+		<h3>Rate us</h3>
 		<p class="hint-text">Your feedback help us serve you better.</p>
+
+        <div class="form-group">
+            <select input type="service" class="form-control" name="service" placeholder="Our Service" required="required">
+                <option value="aservice">Select a service</option>
+                <option value="SFTP">SFTP</option>
+                <option value="WebPortal">Web Portal</option>
+            </select>
+        </div>
 
         <div class="form-group">
             <select input type="rating" class="form-control" name="rating" placeholder="Your Rating" required="required">
                 <option value="rate">Select a rating</option>
-                <option value="poor">Poor</option>
-                <option value="fair">Fair</option>
-                <option value="good">Good</option>
-                <option value="excellent">Excellent</option>
+                <option value="Poor">Poor</option>
+                <option value="Fair">Fair</option>
+                <option value="Good">Good</option>
+                <option value="Excellent">Excellent</option>
             </select>
         </div>
         <div class="form-group">
-        	<textarea input type="comment" class="form-control" name="comment" placeholder="Your Comment" rows="4" cols="20" required="required"></textarea>
+        	<textarea input type="comment" class="form-control" name="comment" placeholder="Your Comment" rows="3" cols="20" required="required"></textarea>
+        </div>    
+
+        <div class="form-group">
+			<div class="row">
+				<div class="col"><input type="text" class="form-control" name="name" placeholder="Your Name" required="required"></div>
+				<div class="col"><input type="text" class="form-control" name="phonenumber" placeholder="Phone Number" required="required"></div>
+			</div>        	
         </div>
-		<div class="form-group">
-            <input type="name" class="form-control" name="name" placeholder="Your Name" required="required">
-        </div>        
+
         
 		<div class="form-group">
             <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
