@@ -5,35 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
         <title>Customer Satisfaction Survey</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
-
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+        <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+       
         <script>
-            $('.mydatatable').DataTable({
-                order: [[3, 'desc']],
-                pagingType: 'full_numbers'
+            $(document).ready(function(){
+                $('#myTable').dataTable();
+                $('.dataTables_length').addClass('bs-select');
             });
-        </script>
-        
+            </script>
+
     </head>
     <body>
         <h4>Feedback submitted succesfully!</h4><br><br>
     
         <div class="container mb-5 mt-3">
-            <table class="table table-striped table bordered mydatatable" style="width: 100%">
+            <table id="myTable" class="table table-striped table-bordered table-sm" cellspacing="0" style="width: 100%">
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Service</th>
                         <th>Rating</th>
                         <th>Comment</th>
                         <th>Name</th>
-                        <th>Service</th>
                         <th>Phone No</th>
                     </tr>
                 </thead>
@@ -43,20 +40,20 @@
                 {{#rows}}
                     <tr>
                         <td>{{sid}}</td>
+                        <td>{{service}}</td>
                         <td>{{rating}}</td>
                         <td>{{comment}}</td>
                         <td>{{name}}</td>
-                        <td>{{service}}</td>
                         <td>{{phonenumber}}</td>
                     </tr>
                     {{/rows}}
                 <tfoot>
                     <tr>
                         <th>#</th>
+                        <th>Service</th>
                         <th>Rating</th>
                         <th>Comment</th>
                         <th>Name</th>
-                        <th>Service</th>
                         <th>Phone No</th>
                     </tr>
                 </tfoot>
